@@ -1,0 +1,86 @@
+<html>
+<head></head>
+
+<body>
+<style>
+table { caption-side:bottom; 
+padding-top: 20px;}
+td,th{
+  border: 1px solid;
+  border-color: rgb(000,090,230);
+  background-color: rgb(163, 224, 255);
+  
+
+  color:   black;
+  text-shadow: auto;
+  width:  20px;
+  height: 40px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+
+
+}
+#comment{
+	word-break: normal ;}
+
+body{
+  background-color: grey;
+  padding-left:200px;
+  padding-right: 200px;
+
+}
+#logout,#change{
+	 background-color : #44c767;
+	 -moz-border-radius:28px;
+	 display:inline-block;
+	 cursor:pointer;
+	-webkit-border-radius:28px;
+	color : white;
+	
+	 
+	 width : 500px;
+	 height :  50px;
+	 
+	 
+	 }
+</style>
+
+<table>
+<th>Std</th>
+<th>Kurs</th>
+<th>Unterricht</th>
+<th>Planmesig</th>
+<th>Ersetzt</th>
+<th>Bemerkung</th>
+
+{% for i in d%}
+<tr>
+<th>{{i.fields.std}}</th>
+<th>{{i.fields.Unterricht.1}}</th>
+<th>{{i.fields.Unterricht.2}}</th>
+<th>{{i.fields.Unterricht.3}}</th>
+<th>{{i.fields.erzsetzt_durch.0}}</th>
+<th id=comment>{{i.fields.bemerkung}}</th>
+</tr>
+{% endfor%}
+
+</table>
+ <form id="change" action="../h/" method="get">
+ <label>
+ <input  value="stundenplan" type="submit" id="change"></label>
+  </table>
+</form></th><th><form id="logout" action="../logout/" method="get">
+<label><input  value="logout" type="submit" id="logout"></label>
+  </table>
+</form></th>
+
+
+
+
+</body>
+
+
+  </html>
+

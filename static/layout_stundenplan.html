@@ -1,0 +1,91 @@
+<html>
+<head></head>
+
+<style>
+table { caption-side:bottom;
+padding-top: 20px; }
+td,th{
+  border: 1px solid;
+  border-color: rgb(000,090,230);
+  background-color: rgb(163, 224, 255);
+  
+
+  color:   black;
+  text-shadow: auto;
+  width:  20px;
+  height: 40px;
+
+	
+  padding-left: 20px;
+  padding-right: 20px;
+
+
+
+}
+#comment{
+	word-break: normal ;}
+
+body{
+  background-color: grey;
+  padding-left:200px;
+  padding-right: 200px;
+
+}
+#logout,#change{
+	 background-color : #44c767;
+	 -moz-border-radius:28px;
+	 display:inline-block;
+	 cursor:pointer;
+	-webkit-border-radius:28px;
+	color : white;
+	
+	 
+	 width : 500px;
+	 height :  50px;
+	 
+	 
+	 }
+</style>
+<body>
+
+
+
+<table>
+<th>tag</th>
+<th>std</th>
+<th>Unterricht</th>
+<th>raum</th>
+<th>lehrer</th>
+
+
+{% for i in d%}
+<tr>
+<th>{{i.fields.tag}}</th>
+<th>{{i.fields.std}}</th>
+<th>{{i.fields.Unterrict.0}}</th>
+<th>{{i.fields.raum.0}}</th>
+<th>{{i.fields.lehrer.0}}</th>
+</tr>
+{% endfor%}
+
+</table>
+
+ 
+ <form id="change" action="../open/" method="get">
+ <label>
+ <input  value="stundenplan" type="submit" id="change"></label>
+  </table>
+</form></th><th><form id="logout" action="../logout/" method="get">
+<label><input  value="logout" type="submit" id="logout"></label>
+  </table>
+</form></th>
+
+
+
+
+
+</body>
+
+
+  </html>
+
